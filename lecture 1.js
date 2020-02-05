@@ -3,7 +3,8 @@ let width = 4, height = 8;
 let s = "";
 let sArray = ["12", "1234", "12", "1234", "12", "1234"];
 
-let createChessTable = function test() //task 2.
+//task 2.
+let createChessTable = function test() 
 {
     for (let i = 0; i < height; i++) {
         for (let j = 0; j < width; j++) {
@@ -22,12 +23,12 @@ let createChessTable = function test() //task 2.
 createChessTable(); //enable to print out chess table.
 console.log(s); //enable to print out chess table.
 
-
+//task 3.
 function AddTwoVariablesTogether(oldVal, newVal) {
     return oldVal + newVal;
 }
 
-let AverageStringLength = function CalcuLateAvgStrLgn(strArray) //task 3.
+let AverageStringLength = function CalcuLateAvgStrLgn(strArray) 
 {
     let totalLgn = 0;
 
@@ -43,8 +44,8 @@ let AverageStringLength = function CalcuLateAvgStrLgn(strArray) //task 3.
 }
 console.log("Average string length: " + AverageStringLength(sArray));
 
-
-function findSolution(target) { //Task 4.
+//Task 4. not finish
+function findSolution(target) { 
     function find(current, history) {
       if (current == target) {
         return history;
@@ -59,4 +60,23 @@ function findSolution(target) { //Task 4.
   }
 
   console.log(findSolution(18));
+
+
+  //Task 5.
+  let journal = [
+    {events: ["work", "touched tree", "pizza",
+              "running", "television"],
+     squirrel: false},
+    {events: ["work", "ice cream", "cauliflower",
+              "lasagna", "touched tree", "brushed teeth"],
+     squirrel: false},
+    {events: ["weekend", "cycling", "break", "peanuts",
+              "beer"],
+     squirrel: true},
+    /* and so on... */
+  ];
+
+  console.log(journal[2].events[4]);
+  
+
 
