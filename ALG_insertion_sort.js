@@ -24,5 +24,4 @@ function InsertionSort(Data)
     return Data;
 }
 
-
 console.log(InsertionSort(A));
