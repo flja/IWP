@@ -11,7 +11,7 @@ function InsertionSort(Data)
         let i = 0;
         for(j = 1; j < Data.length; j++)
         {
-            key = Data[j];g
+            key = Data[j];
             i = j -1;
             while( i >= 0 && Data[i] > key)
             {
