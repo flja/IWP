@@ -3,7 +3,8 @@ const fs = require("fs");
 
 let server = http.createServer((request, response) => {
     response.setHeader("Access-Control-Allow-Origin", "*");
-    response.setHeader("Content-Type': 'application/json")
+    response.setHeader("Access-Control-Allow-Headers","*");
+
     response.writeHead(200);
     
     if(request.url == "/log")
@@ -13,16 +14,18 @@ let server = http.createServer((request, response) => {
         request.on('data', (chunk) => {
         body.push(chunk);
         }).on('end', () => {
-        body = Buffer.concat(body).toString();
-        });
-
-        
-        fs.appendFile("logFile.txt",body, (err) =>{
-            if(err)
+            body = Buffer.concat(body).toString();
+            console.log(body);
+            if(body.length > 0)
             {
-                console.log(err);
+                fs.appendFile("logFile.txt",body + "\r\n", (err) =>{
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                });
             }
-        }) ;
+        });
     }
     response.end();
 });
